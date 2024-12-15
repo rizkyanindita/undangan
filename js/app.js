@@ -18,6 +18,22 @@ document.addEventListener("DOMContentLoaded", async () => {
   await pagination.init();
   await window.AOS.init();
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const parameterValue = urlParams.get('parameter');
+
+  // Check if the parameter exists and update the HTML
+  if (parameterValue) {
+      // Display the parameter value in the <p> element
+      document.getElementById('parameterDisplay').innerText = `The parameter value is: ${parameterValue}`;
+  } else {
+      // If no parameter is found, display a default message
+      document.getElementById('parameterDisplay').innerText = '';
+  }
+
+  console.log("isi parameter value,",parameterValue);
+  
+
+
   // app.js
   document.addEventListener("DOMContentLoaded", function () {
     // Application initialization code goes here
@@ -31,6 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log("App Initialization Logic Here");
     // Place your startup logic or app components initialization here
   }
+
 
   window.like = like;
   window.util = util;
