@@ -1,0 +1,101 @@
+@import url("common.css");
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(192, 192, 192, 0.8);
+    border-radius: 1rem;
+    border: 0.25rem solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(192, 192, 192, 1);
+}
+
+@media screen and (width <=767px) {
+    html {
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+}
+
+.btn-theme-dark {
+    color: var(--bs-dark);
+    background-color: var(--bs-gray-100);
+}
+
+.btn-theme-light {
+    color: var(--bs-light);
+    background-color: var(--bs-gray-800);
+}
+
+.btn-theme-light:hover {
+    color: var(--bs-light);
+    background-color: var(--bs-gray-600);
+}
+
+.btn-theme-dark:hover {
+    color: var(--bs-dark);
+    background-color: var(--bs-gray-300);
+}
+
+.btn-theme-dark:focus {
+    color: var(--bs-dark);
+}
+
+.btn-theme-light:focus {
+    color: var(--bs-light);
+}
+
+.logout:hover {
+    color: var(--bs-light) !important;
+    background-color: var(--bs-danger) !important;
+}
+
+
+/* Pink and White Theme Styles */
+.pink-white-theme {
+    transition: all 0.3s ease;
+  }
+  
+  /* Backgrounds */
+  .pink-white-theme.bg-light,
+  .pink-white-theme.bg-white,
+  .pink-white-theme.bg-cover-white {
+    background-color: #f9d0d0; /* Light pink background */
+  }
+  
+  .pink-white-theme.bg-theme-light {
+    background-color: #ffe3e3; /* Soft pink */
+  }
+  
+  /* Text and Color */
+  .pink-white-theme.text-dark {
+    color: #5c0e2e; /* Deep pink text */
+  }
+  
+  .pink-white-theme.color-theme-white {
+    color: #ffffff; /* White text */
+  }
+  
+  /* Buttons */
+  .pink-white-theme.btn-theme-dark,
+  .pink-white-theme.btn-outline-dark {
+    background-color: #ff99b2; /* Pink background for buttons */
+    color: #fff; /* White text */
+    border: 2px solid #ff66a3; /* Darker pink border */
+  }
+  
+  .pink-white-theme.btn-theme-dark:hover,
+  .pink-white-theme.btn-outline-dark:hover {
+    background-color: #ff66a3; /* Darker pink on hover */
+    border-color: #ff3385; /* Even darker pink */
+  }
+  

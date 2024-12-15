@@ -1,0 +1,110 @@
+@keyframes scroll {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+.mouse-animation>.scroll-animation {
+    width: 0.25rem;
+    height: 0.625rem;
+    animation: scroll 3s linear infinite;
+}
+
+.mouse-animation {
+    height: 2rem;
+    box-sizing: content-box;
+}
+
+@keyframes spin-icon {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin-button {
+    animation: spin-icon 5s linear infinite;
+}
+
+@keyframes love {
+    50% {
+        transform: translateY(1rem);
+    }
+}
+
+.animate-love {
+    animation: love 5s ease-in-out infinite;
+}
+
+@keyframes spotlight {
+    0%, 100% {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 126, 156, 0.5); /* Lighter shadow */
+    }
+    50% {
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 126, 156, 0.7); /* Glow remains soft */
+    }
+}
+
+
+
+/* Container styling for centering */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+/* Image styling */
+.img-center {
+    width: 200px; /* Set desired size */
+    height: 200px; /* Ensure it's symmetric */
+    object-fit: cover; /* Keep the image aspect ratio */
+    border-radius: 50%; /* Make it perfectly round */
+    animation: fadeIn 1.5s ease-in-out; /* Add fade-in effect */
+}
+
+/* Outer border styling */
+.border-outer {
+    border: 8px solid rgba(255, 255, 255, 0.6); /* Light translucent border */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    border-radius: 50%; /* Make the border round */
+    width: var(--image-size, 250px); /* Default size */
+    height: var(--image-size, 250px); /* Default size */
+}
+
+/* Hover effect */
+.border-outer:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Intensify shadow */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+

@@ -1,0 +1,75 @@
+export const audio = (() => {
+  let music = null;
+  let audio = null;
+  let isPlay = false;
+
+  const init = () => {
+    music = document.getElementById("button-music");
+
+    audio = new Audio(music.getAttribute("data-url"));
+    audio.currentTime = 0;
+    audio.autoplay = false;
+    audio.muted = false;
+    audio.loop = true;
+    audio.volume = 1;
+    audio.controls = false;
+
+    music.addEventListener("click", () => {
+      if (!isPlay) {
+        return play();
+      }
+
+      pause();
+    });
+
+    music.addEventListener("online", play);
+    music.addEventListener("offline", pause);
+  };
+
+  const play = async () => {
+    music.disabled = true;
+    try {
+      await audio.play();
+      isPlay = true;
+      music.innerHTML = '<i class="fa-solid fa-circle-pause spin-button"></i>';
+    } catch (err) {
+      isPlay = false;
+      alert(err);
+    }
+    music.disabled = false;
+  };
+
+  const pause = () => {
+    isPlay = false;
+    audio.pause();
+    music.innerHTML = '<i class="fa-solid fa-circle-play"></i>';
+  };
+
+  const showButton = () => {
+    music.style.display = "block";
+  };
+
+  const paramvalue = () => {
+    function getParameterByName(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+
+    // Get the value of the 'parameter' query parameter
+    const parameterValue = getParameterByName("parameter");
+
+    // Set the value inside the <p> tag
+    if (parameterValue) {
+      document.getElementById("dynamic-content").textContent = parameterValue;
+    }
+  };
+  // Function to get query parameters from the URL
+
+  return {
+    init,
+    play,
+    pause,
+    showButton,
+    paramvalue,
+  };
+})();
