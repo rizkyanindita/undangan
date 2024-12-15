@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Check if the parameter exists and update the HTML
   if (parameterValue) {
       // Display the parameter value in the <p> element
-      document.getElementById('parameterDisplay').innerText = `The parameter value is: ${parameterValue}`;
+      document.getElementById('parameterDisplay').innerText = `${parameterValue}`;
   } else {
       // If no parameter is found, display a default message
-      document.getElementById('parameterDisplay').innerText = '';
+      document.getElementById('parameterDisplay').innerText = `${parameterValue}`;
   }
 
   console.log("isi parameter value,",parameterValue);
